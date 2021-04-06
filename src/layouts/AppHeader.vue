@@ -1,14 +1,19 @@
 <template>
   <header>
     <div class="brand-logo">
-      <img src="../assets/logo.png" />
+      <img src="../assets/logo.png" @click="goToHome" />
     </div>
   </header>
 </template>
 
 <script>
 export default {
-  name: 'AppHeader'
+  name: 'AppHeader',
+  methods: {
+    goToHome () {
+      this.$router.push({ name: 'Home' })
+    }
+  }
 }
 </script>
 
@@ -19,6 +24,9 @@ header {
   margin-bottom: 110px;
   .brand-logo {
     padding: 68px 0 67px 83px;
+    img {
+      cursor: pointer;
+    }
   }
 }
 @include desktop {

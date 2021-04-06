@@ -199,4 +199,18 @@ export default {
     }
   }
 }
+@include mobile {
+  .forecast-detail {
+    .forecast-detail-information {
+      .forecast-detail-location {
+        .position-name {
+          display: inline-block;
+          h3 {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

@@ -4,14 +4,18 @@
       <img src="../assets/footer_bg.png" alt="footer image" />
     </div>
     <div class="footer-logo-wrapper">
-      <img src="../assets/logo_footer.png" alt="footer logo" />
+      <img src="../assets/logo_footer.png" alt="footer logo" @click="goToHome"/>
     </div>
   </footer>
 </template>
 
 <script>
 export default {
-
+  methods: {
+    goToHome () {
+      this.$router.push({ name: 'Home' })
+    }
+  }
 }
 </script>
 
@@ -26,6 +30,7 @@ footer {
       position: absolute;
       right: 84px;
       bottom: 92px;
+      cursor: pointer;
     }
   }
 }
