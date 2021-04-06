@@ -33,10 +33,10 @@ export default {
   methods: {
     showForecast () {
       this.$store.dispatch('changeCity', this.info.name)
-      this.$router.replace({
+      this.$router.push({
         name: 'Detail',
         params: {
-          location: this.info.name
+          id: this.info.name
         }
       })
     }

@@ -32,9 +32,16 @@
 <script>
 import DayInfo from '../components/DayInfo.vue'
 import ForecastDegree from '../components/ForecastDegree.vue'
+import { useRoute } from 'vue-router'
 export default {
   components: { ForecastDegree, DayInfo },
-  props: ['location'],
+  setup () {
+    const route = useRoute()
+    const location = route.params.id
+    return {
+      location
+    }
+  },
   computed: {
     data () {
       return this.$store.getters.getLocationByCity
