@@ -65,6 +65,9 @@ export default {
         .then(this.getDaysForecast)
     },
     getDaysForecast (res) {
+      if (res.length === 0) {
+        alert('Could not find the city. Please enter the correct city.')
+      }
       fetch(`${this.api_base_url}onecall?lat=${res[0].lat}&lon=${res[0].lon}&exclude=minutely,hourly,alerts&units=metric&appid=${this.api_key}`)
         .then(result => {
           return result.json()
